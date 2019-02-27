@@ -28,12 +28,14 @@ class AtlaskitFieldText extends React.Component<Field> {
       value,
       label,
       autofocus,
-      shouldFitContainer
+      shouldFitContainer,
+      type
     } = this.props;
     return (
       <AkField
         name={name}
         label={label}
+        type={type}
         helperText={description}
         isRequired={required}
         isInvalid={!isValid}
@@ -48,6 +50,7 @@ class AtlaskitFieldText extends React.Component<Field> {
                   {...fieldProps}
                   autoComplete="off"
                   name={name}
+                  type={type}
                   placeholder={placeholder}
                   onChange={(evt: any) => onFieldChange(id, evt.target.value)}
                   onFocus={() => onFieldFocus(id)}
